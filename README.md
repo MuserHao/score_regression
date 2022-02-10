@@ -6,8 +6,8 @@ Required datasets: [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), 
 
 
 The example command to train and test a model:
-
+```
 main.py --runner DiffusionRunner --config nyu_d.yml --doc folder_name
 main.py --runner DiffusionRunner --test --doc model_folder -o results_folder
-
+```
 
