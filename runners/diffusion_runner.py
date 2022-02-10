@@ -137,9 +137,8 @@ class DiffusionRunner():
         return targets, target_pred
 
     def train(self):
-        depot_root = '/depot/yuzhu/data'
-        target_range = 6.5144
-
+        depot_root = '/data'        ## Change to your data path
+        
         train_loader, test_loader = getTrainingTestingData(os.path.join(depot_root, 'NYUv2', 'nyu_data.zip'),
                                                            batch_size=self.config.training.batch_size)
         num_trainloader = len(train_loader)
@@ -177,7 +176,6 @@ class DiffusionRunner():
 
                 X = torch.Tensor(batch["image"]).to(self.config.device)
                 y = torch.Tensor(batch["depth"])
-                # y = DepthNorm(y)  # + torch.rand_like(y) / target_range
                 y = y.to(self.config.device)
 
                 timesteps = torch.randint(0, len(sigmas), (X.shape[0],), device=X.device)
@@ -218,8 +216,8 @@ class DiffusionRunner():
             os.makedirs(self.args.image_folder)
 
         model.eval()
-        depot_root = '/depot/yuzhu/data'
-        target_range = 6.5144
+        depot_root = '/data'            ## Change to your data path
+
 
         dataloader, _ = getTrainingTestingData(os.path.join(depot_root, 'NYUv2', 'nyu_data.zip'), batch_size=batch_size)
 
