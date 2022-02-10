@@ -199,7 +199,7 @@ class DenseRunner():
             os.makedirs(self.args.image_folder)
     
         model.eval()
-        depot_root = '/depot/yuzhu/data'
+        depot_root = '/data_path'  ##TODO change to your data path
     
         _, dataloader = getTrainingTestingData(os.path.join(depot_root, 'NYUv2', 'nyu_data.zip'), batch_size=batch_size)
     
