@@ -1,0 +1,41 @@
+training:
+  batch_size: 8
+  n_epochs: 10
+  n_iters: 2000001
+  ngpu: 1
+  snapshot_freq: 10000
+
+data:
+  # celeba
+ # dataset: "CELEBA"
+ # image_size: 128
+ # channels: 6
+ # out_channels: 3
+ # noise_level: 0.11765
+ # logit_transform: false
+ # random_flip: false
+
+ # nyuv2
+  dataset: "NYUv2"
+  image_size: 64
+  channels: 3
+  out_channels: 1
+  logit_transform: false
+  random_flip: false
+
+model:
+  sigma_max: 1
+  sigma_min: 0.0001
+  batch_norm: false
+  pre_train: true
+  ## configurations for CelebA, CIFAR10
+  ngf: 128
+  ### configurations for MNIST
+#  ngf: 64
+
+optim:
+  weight_decay: 0.001
+  optimizer: "Adam"
+  lr: 0.0001
+  beta1: 0.9
+  amsgrad: false
