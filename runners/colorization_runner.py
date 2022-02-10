@@ -165,7 +165,7 @@ class ColorizationRunner():
 
     def train(self):
         target_range = 255.
-        depot_root = '/depot/yuzhu/data'
+        depot_root = '/data'        ## Change to your data path
         if self.config.data.random_flip:
             dataset = CelebAColorization(root=depot_root, split='train',
                                          transforms=transforms.Compose([
@@ -266,7 +266,7 @@ class ColorizationRunner():
             os.makedirs(self.args.image_folder)
 
         model.eval()
-        depot_root = '/depot/yuzhu/data'
+        depot_root = '/data'        ## Change to your data path
 
         test_dataset = CelebAColorization(root=depot_root, split='train',
                                           transforms=transforms.Compose([
