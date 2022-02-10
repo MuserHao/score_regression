@@ -47,7 +47,7 @@ class DenseRunner():
             raise NotImplementedError('Optimizer {} not understood.'.format(self.config.optim.optimizer))
 
     def train(self):
-        depot_root = '/depot/yuzhu/data'
+        depot_root = '/data'   ##TODO change to data path
 
         nyu_train_transform = transforms.Compose([
             transforms.CenterCrop((400, 400)),
